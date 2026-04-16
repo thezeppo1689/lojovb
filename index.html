@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COLAVOL 14 White — Regionals Hub · May 2–3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* Carolina Blue team colors */
+  --cblue:    #4b9cd3;
+  --cblue-dk: #2a6ea6;
+  --cblue-bg: #0d1e2e;
+  --cblue-glow: rgba(75,156,211,.18);
+
+  /* Core dark palette */
+  --black:  #090a0d;
+  --white:  #f0f2f5;
+  --accent: #e8c84a;
+  --orange: #e05c2a;
+  --muted:  #7e8898;
+  --card:   #10131a;
+  --card2:  #181c24;
+  --border: #1e2330;
+  --green:  #4bb87a;
+  --blue:   var(--cblue);
+  --red:    #d45a4a;
+  --purple: #9b7fd4;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-size:15px;line-height:1.65;}
+
+/* ════════════════════════════
+   SITE-LEVEL NAV
+════════════════════════════ */
+.site-nav{
+  background:#0b0d12;
+  border-bottom:2px solid var(--cblue);
+  position:sticky;top:0;z-index:999;
+}
+.site-nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:0;
+}
+.site-logo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--cblue);
+  padding:12px 20px 12px 0;border-right:1px solid var(--border);
+  white-space:nowrap;flex-shrink:0;
+}
+.site-logo span{color:var(--white);}
+.site-tabs{display:flex;overflow-x:auto;flex:1;}
+.site-tabs::-webkit-scrollbar{height:2px;}
+.site-tabs::-webkit-scrollbar-thumb{background:var(--border);}
+.site-tab{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:14px 20px;border:none;background:none;
+  color:var(--muted);cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:color .15s,border-color .15s;
+  white-space:nowrap;flex-shrink:0;
+}
+.site-tab:hover{color:var(--white);}
+.site-tab.active{color:var(--cblue);border-bottom-color:var(--cblue);}
+.site-tab[data-page="home"].active{color:var(--accent);border-bottom-color:var(--accent);}
+.srva-ext{
+  margin-left:auto;flex-shrink:0;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;border:1px solid var(--border);border-radius:2px;
+  color:var(--muted);text-decoration:none;transition:.15s;
+}
+.srva-ext:hover{color:var(--cblue);border-color:var(--cblue);}
+
+/* ════════════════════════════
+   PAGE SYSTEM
+════════════════════════════ */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ════════════════════════════
+   LANDING PAGE
+════════════════════════════ */
+.landing-hero{
+  background:linear-gradient(160deg,#0d1420 0%,var(--black) 55%,#0b101a 100%);
+  border-bottom:1px solid var(--border);
+  padding:72px 44px 60px;position:relative;overflow:hidden;
+  min-height:340px;
+}
+.landing-hero::before{
+  content:"REGIONALS";
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:200px;
+  color:rgba(75,156,211,.025);position:absolute;right:-20px;top:-20px;
+  letter-spacing:-8px;line-height:1;pointer-events:none;user-select:none;
+}
+.landing-hero::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--cblue) 0%, transparent 70%);
+}
+.hero-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:5px;color:var(--cblue);text-transform:uppercase;margin-bottom:14px;
+}
+.landing-hero h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;
+  line-height:.92;letter-spacing:-2px;text-transform:uppercase;margin-bottom:16px;
+}
+.landing-hero h1 em{color:var(--cblue);font-style:normal;}
+.landing-hero h1 .white{color:var(--white);}
+.hero-sub{
+  color:var(--muted);font-size:15px;font-weight:500;max-width:580px;line-height:1.6;
+  margin-bottom:24px;
+}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:0;}
+.hero-badge{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;
+  letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:2px;
+}
+.hb-blue{background:var(--cblue-bg);color:var(--cblue);border:1px solid #1a3a5a;}
+.hb-white{background:#181c24;color:#ccc;border:1px solid var(--border);}
+.hb-accent{background:#201e08;color:var(--accent);border:1px solid #3a3208;}
+
+/* SECTION CARDS on landing */
+.section-cards{
+  max-width:1200px;margin:0 auto;padding:52px 24px 72px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.sec-card{
+  background:var(--card);border:1px solid var(--border);border-radius:6px;
+  overflow:hidden;cursor:pointer;
+  transition:border-color .2s,transform .15s,box-shadow .2s;
+  position:relative;
+}
+.sec-card:hover{
+  border-color:var(--cblue);
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(75,156,211,.12);
+}
+.sec-card-accent:hover{ border-color:var(--green); box-shadow:0 12px 40px rgba(75,184,122,.12); }
+.sec-card-hotel:hover{ border-color:var(--accent); box-shadow:0 12px 40px rgba(232,200,74,.12); }
+
+.card-color-bar{height:4px;}
+.ccb-venue{background:linear-gradient(90deg,var(--cblue),var(--cblue-dk));}
+.ccb-energy{background:linear-gradient(90deg,var(--green),#2a8a4a);}
+.ccb-hotel{background:linear-gradient(90deg,var(--accent),#c0a030);}
+
+.sec-card-inner{padding:28px 26px 24px;}
+.sec-card-icon{font-size:36px;margin-bottom:14px;display:block;}
+.sec-card-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;
+}
+.sec-card-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;
+  text-transform:uppercase;line-height:1;margin-bottom:10px;
+}
+.sec-card-title.venue{color:var(--cblue);}
+.sec-card-title.energy{color:var(--green);}
+.sec-card-title.hotel{color:var(--accent);}
+.sec-card-desc{font-size:13.5px;color:#9aa3b0;line-height:1.55;margin-bottom:18px;}
+.sec-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.tag-pill{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;
+  letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:2px;
+}
+.tp-blue{background:#0d1e2e;color:var(--cblue);border:1px solid #1a3a5a;}
+.tp-green{background:#0e1e0e;color:var(--green);border:1px solid #1a3a1a;}
+.tp-accent{background:#1e1a08;color:var(--accent);border:1px solid #3a3208;}
+.tp-muted{background:#181c24;color:var(--muted);border:1px solid var(--border);}
+
+.sec-card-cta{
+  display:inline-block;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:11px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:9px 18px;border-radius:2px;
+  border:none;cursor:pointer;transition:opacity .15s;
+}
+.cta-venue{background:var(--cblue);color:#08121e;}
+.cta-energy{background:var(--green);color:#061408;}
+.cta-hotel{background:var(--accent);color:#141008;}
+.sec-card-cta:hover{opacity:.85;}
+
+/* Quick links bar */
+.quick-bar{background:#0d1018;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 24px;}
+.quick-bar-inner{max-width:1200px;margin:0 auto;display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.quick-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);flex-shrink:0;margin-right:4px;}
+.qlink{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:2px;
+  border:1px solid var(--border);color:var(--muted);text-decoration:none;cursor:pointer;
+  background:none;transition:.15s;
+}
+.qlink:hover{color:var(--cblue);border-color:var(--cblue);}
+
+/* ════════════════════════════
+   SECTION PAGES (shared layout)
+════════════════════════════ */
+.page-header{
+  padding:44px 44px 36px;position:relative;overflow:hidden;
+  border-bottom:3px solid var(--cblue);
+  background:linear-gradient(155deg,#0d1420 0%,var(--black) 70%);
+}
+.page-header.energy{ border-bottom-color:var(--green); background:linear-gradient(155deg,#0a1410 0%,var(--black) 70%); }
+.page-header.hotel{ border-bottom-color:var(--accent); background:linear-gradient(155deg,#141008 0%,var(--black) 70%); }
+
+.page-header::before{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:160px;
+  position:absolute;right:-10px;top:-10px;
+  letter-spacing:-6px;line-height:1;pointer-events:none;user-select:none;
+}
+.page-header.venue::before{content:"VENUE";color:rgba(75,156,211,.04);}
+.page-header.energy::before{content:"ENERGY";color:rgba(75,184,122,.04);}
+.page-header.hotel::before{content:"HOTEL";color:rgba(232,200,74,.04);}
+
+.ph-eyebrow{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;
+}
+.ph-eyebrow.venue{color:var(--cblue);}
+.ph-eyebrow.energy{color:var(--green);}
+.ph-eyebrow.hotel{color:var(--accent);}
+.page-header h2{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:52px;
+  line-height:.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:10px;
+}
+.page-header h2 em{font-style:normal;}
+.page-header.venue h2 em{color:var(--cblue);}
+.page-header.energy h2 em{color:var(--green);}
+.page-header.hotel h2 em{color:var(--accent);}
+.ph-sub{color:var(--muted);font-size:14px;max-width:580px;line-height:1.5;margin-bottom:14px;}
+.ph-back{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:5px 12px;border:1px solid var(--border);border-radius:2px;
+  color:var(--muted);background:none;cursor:pointer;text-decoration:none;
+  transition:.15s;margin-top:4px;
+}
+.ph-back:hover{color:var(--white);border-color:var(--muted);}
+
+/* Sub-page nav */
+.subpage-nav{background:#0b0d12;border-bottom:1px solid var(--border);position:sticky;top:46px;z-index:500;}
+.subpage-nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;}
+.subpage-nav-inner::-webkit-scrollbar{height:2px;}
+.sub-nav-btn{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;padding:13px 18px;
+  border:none;background:none;color:var(--muted);cursor:pointer;
+  border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;flex-shrink:0;
+}
+.sub-nav-btn:hover{color:var(--white);}
+.venue-page .sub-nav-btn.active{color:var(--cblue);border-bottom-color:var(--cblue);}
+.energy-page .sub-nav-btn.active{color:var(--green);border-bottom-color:var(--green);}
+.hotel-page .sub-nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+.page-container{max-width:1200px;margin:0 auto;padding:0 24px 80px;}
+.sub-section{display:none;padding-top:40px;}
+.sub-section.active{display:block;}
+
+/* ════════════════════════════
+   SHARED COMPONENTS
+════════════════════════════ */
+.sec-hd{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);}
+.sec-badge{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;padding:5px 11px;border-radius:2px;white-space:nowrap;flex-shrink:0;
+}
+.b-gray{background:#1e2230;color:var(--muted);}
+.b-blue{background:var(--cblue-bg);color:var(--cblue);}
+.b-green{background:#0e1e0e;color:var(--green);}
+.b-yellow{background:#201e08;color:var(--accent);}
+.b-red{background:#2a1010;color:var(--red);}
+.b-orange{background:#2a1408;color:var(--orange);}
+.b-purple{background:#1e1530;color:var(--purple);}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;line-height:1;}
+.sec-meta{font-size:13px;color:var(--muted);margin-top:4px;}
+
+.callout{
+  border-left:3px solid var(--cblue);background:var(--cblue-bg);
+  padding:14px 18px;margin:16px 0;border-radius:0 3px 3px 0;font-size:14px;color:#bdc5d0;
+}
+.callout strong{color:var(--accent);}
+.callout a{color:var(--cblue);}
+.callout.green{border-left-color:var(--green);background:#0a1a0a;}
+.callout.orange{border-left-color:var(--orange);background:#1a1008;}
+.callout.red{border-left-color:var(--red);background:#1a0e0e;}
+.callout.yellow{border-left-color:var(--accent);background:#1a1a08;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+.g2-3{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px 20px;}
+.card.hl-blue{border-color:var(--cblue);}
+.card.hl-green{border-color:var(--green);}
+.card.hl-yellow{border-color:var(--accent);}
+.card-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;margin-bottom:10px;}
+.card-title.blue{color:var(--cblue);}
+.card-title.green{color:var(--green);}
+.card-title.accent{color:var(--accent);}
+.card-value{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--accent);}
+
+ul.bl{list-style:none;padding:0;}
+ul.bl li{padding:6px 0;border-bottom:1px solid var(--border);font-size:14px;color:#bdc5d0;display:flex;gap:10px;}
+ul.bl li:last-child{border-bottom:none;}
+ul.bl li::before{content:"→";color:var(--cblue);font-weight:700;flex-shrink:0;}
+ul.bl li strong{color:var(--white);}
+ul.bl.green li::before{color:var(--green);}
+ul.bl.red li::before{color:var(--red);}
+ul.bl.accent li::before{color:var(--accent);}
+
+.sub-label{
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;
+  text-transform:uppercase;margin:28px 0 14px;color:var(--white);
+  display:flex;align-items:center;gap:10px;
+}
+.sub-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+hr.rule{border:none;border-top:1px solid var(--border);margin:28px 0;}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14px;}
+.tbl thead tr{border-bottom:2px solid var(--cblue);}
+.tbl th{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 10px;}
+.tbl td{padding:9px 10px;border-bottom:1px solid var(--border);color:#bdc5d0;vertical-align:top;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl td:first-child{color:var(--white);font-weight:600;}
+.tbl.green thead tr{border-bottom-color:var(--green);}
+
+.info-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.info-row:last-child{border-bottom:none;}
+.info-icon{font-size:16px;flex-shrink:0;width:24px;text-align:center;margin-top:1px;}
+.info-body{flex:1;}
+.info-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.info-value{font-size:14px;color:var(--white);line-height:1.5;}
+.info-value a{color:var(--cblue);text-decoration:none;}
+
+/* ════════════════════════════
+   VENUE-SPECIFIC STYLES
+════════════════════════════ */
+.hall-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.hall-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px 20px;position:relative;overflow:hidden;}
+.hall-card::before{
+  content:attr(data-hall);
+  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:80px;
+  color:rgba(255,255,255,.025);position:absolute;right:-8px;bottom:-8px;
+  line-height:1;pointer-events:none;
+}
+.hall-letter{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:48px;line-height:1;margin-bottom:4px;}
+.hall-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.hall-tag{display:inline-block;margin-top:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border-radius:2px;}
+
+.park-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.park-card{border-radius:4px;padding:16px 18px;border:2px solid transparent;}
+.park-yellow{background:#1a1804;border-color:#9a8818;}
+.park-orange{background:#1a1004;border-color:var(--orange);}
+.park-blue{background:#0a1422;border-color:var(--cblue);}
+.park-green{background:#0a1a0e;border-color:var(--green);}
+.park-red{background:#1a0e0e;border-color:var(--red);}
+.park-silver{background:#141418;border-color:#666;}
+.park-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:2px;}
+.park-yellow .park-name{color:#e8c84a;}
+.park-orange .park-name{color:var(--orange);}
+.park-blue .park-name{color:var(--cblue);}
+.park-green .park-name{color:var(--green);}
+.park-red .park-name{color:var(--red);}
+.park-silver .park-name{color:#ccc;}
+.park-sub{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.park-detail{font-size:13px;color:#aab3bf;line-height:1.5;}
+.park-note{margin-top:8px;font-size:12px;font-style:italic;color:var(--muted);}
+
+.prohib-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.prohib-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px 20px;}
+.prohib-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.prohib-icon{font-size:24px;}
+.prohib-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;text-transform:uppercase;color:var(--red);}
+.prohib-title.ok{color:var(--green);}
+ul.check-list{list-style:none;padding:0;}
+ul.check-list li{padding:5px 0;border-bottom:1px solid var(--border);font-size:13.5px;color:#bdc5d0;display:flex;gap:10px;align-items:flex-start;}
+ul.check-list li:last-child{border-bottom:none;}
+.x-mark{color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;}
+.chk-mark{color:var(--green);font-weight:900;flex-shrink:0;margin-top:1px;}
+
+.dir-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);}
+.dir-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.15s;margin-bottom:-1px;}
+.dir-tab.active{color:var(--cblue);border-bottom-color:var(--cblue);}
+.dir-content{display:none;padding:16px 0;}
+.dir-content.active{display:block;}
+
+.tips-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.tip{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:16px 18px;}
+.tip-icon{font-size:26px;margin-bottom:8px;}
+.tip-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;text-transform:uppercase;color:var(--white);margin-bottom:5px;}
+.tip-body{font-size:13px;color:#9aa3b0;line-height:1.5;}
+
+/* ════════════════════════════
+   ENERGY-SPECIFIC STYLES
+════════════════════════════ */
+.sched{display:flex;flex-direction:column;gap:10px;}
+.sched-row{display:grid;grid-template-columns:100px 1fr;background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+.sched-row.hl{border-color:var(--accent);}
+.sched-row.warn{border-color:var(--red);}
+.sched-time{background:var(--card2);padding:14px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-right:1px solid var(--border);}
+.sched-row.hl .sched-time{background:#1e1a04;border-right-color:var(--accent);}
+.sched-row.warn .sched-time{background:#1a0e0e;border-right-color:var(--red);}
+.sched-tm{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;color:var(--accent);line-height:1;}
+.sched-row.warn .sched-tm{color:var(--red);}
+.sched-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-top:3px;}
+.sched-body{padding:13px 16px;}
+.sched-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;color:var(--white);margin-bottom:3px;}
+.sched-row.hl .sched-name{color:var(--accent);}
+.sched-detail{font-size:13.5px;color:#aab3bf;line-height:1.5;}
+
+.week-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.day-col{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+.day-col.hl{border-color:var(--accent);}
+.day-head{background:var(--card2);padding:10px 12px;border-bottom:1px solid var(--border);}
+.day-col.hl .day-head{background:#1a1804;border-bottom-color:var(--accent);}
+.day-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;text-transform:uppercase;}
+.day-col.hl .day-name{color:var(--accent);}
+.day-date{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--muted);letter-spacing:1px;}
+.day-meals{padding:10px 12px;display:flex;flex-direction:column;gap:7px;}
+.slot-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.slot-meal{font-size:12.5px;color:#aab3bf;line-height:1.3;margin-top:1px;}
+.slot-meal.hl{color:var(--accent);font-weight:600;}
+hr.slot-div{border:none;border-top:1px solid var(--border);margin:3px 0;}
+
+.food-card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;}
+.food-top{padding:16px 18px;}
+.food-when{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.food-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;color:var(--white);margin-bottom:3px;}
+.food-sub{font-size:12.5px;color:var(--muted);font-style:italic;margin-bottom:10px;}
+.acc{border-top:1px solid var(--border);}
+.acc-btn{width:100%;background:none;border:none;border-bottom:1px solid var(--border);padding:9px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;color:var(--muted);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:color .15s;}
+.acc-btn:hover{color:var(--white);}
+.acc-btn.open{color:var(--green);border-bottom-color:transparent;}
+.acc-arrow{transition:transform .2s;font-size:10px;}
+.acc-btn.open .acc-arrow{transform:rotate(180deg);}
+.acc-body{display:none;padding:12px 18px 16px;background:var(--card2);font-size:14px;color:#aab3bf;line-height:1.6;}
+.acc-body.open{display:block;}
+.acc-body ul{list-style:none;padding:0;}
+.acc-body ul li{padding:4px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:10px;}
+.acc-body ul li:last-child{border-bottom:none;}
+.acc-body ul li span.amt{color:var(--accent);font-weight:600;font-family:'Barlow Condensed',sans-serif;font-size:14px;white-space:nowrap;}
+ol.simple{list-style:none;padding:0;counter-reset:s;}
+ol.simple li{counter-increment:s;display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:14px;color:#aab3bf;padding:8px 0;border-bottom:1px solid var(--border);}
+ol.simple li:last-child{border-bottom:none;}
+ol.simple li::before{content:counter(s);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:18px;color:var(--green);line-height:1.3;}
+
+.snack-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:16px 18px;}
+.snack-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.snack-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;text-transform:uppercase;color:var(--white);margin-bottom:7px;}
+.snack-detail{font-size:13.5px;color:#9aa3b0;line-height:1.5;}
+.tip-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+/* ════════════════════════════
+   HOTEL-SPECIFIC STYLES
+════════════════════════════ */
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:14px 16px;text-align:center;}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--accent);line-height:1;}
+.stat-lbl{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+
+.rest-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.rest-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:16px 18px;}
+.rest-card.athlete{border-left:3px solid var(--green);}
+.rest-card.close{border-left:3px solid var(--cblue);}
+.rest-card.fuel{border-left:3px solid var(--accent);}
+.rest-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.rest-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;color:var(--white);line-height:1.1;}
+.rest-dist{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.rest-tag{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 7px;border-radius:2px;flex-shrink:0;}
+.tag-green{background:#0e1e0e;color:var(--green);}
+.tag-blue{background:var(--cblue-bg);color:var(--cblue);}
+.tag-yellow{background:#1e1a08;color:var(--accent);}
+.rest-body{font-size:13px;color:#9aa3b0;line-height:1.5;}
+.rest-notes{font-size:12px;color:var(--green);margin-top:6px;font-style:italic;}
+
+.poi-table{width:100%;border-collapse:collapse;font-size:14px;}
+.poi-table th{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-bottom:2px solid var(--border);text-align:left;}
+.poi-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:#aab3bf;vertical-align:top;}
+.poi-table tr:last-child td{border-bottom:none;}
+.poi-table td:first-child{color:var(--white);font-weight:600;}
+.poi-table td .tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-left:6px;vertical-align:middle;}
+
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.chip{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;border:1px solid var(--border);color:var(--muted);background:var(--card2);}
+.chip.green{border-color:#1a3a1a;color:var(--green);background:#0a1a0a;}
+.chip.blue{border-color:#1a3050;color:var(--cblue);background:var(--cblue-bg);}
+.chip.yellow{border-color:#3a3008;color:var(--accent);background:#1a1a08;}
+
+.map-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:10px 18px;border-radius:3px;text-decoration:none;transition:all .15s;border:1px solid;margin-top:10px;}
+.map-btn.blue{background:var(--cblue-bg);color:var(--cblue);border-color:#1a3a5a;}
+.map-btn.blue:hover{background:#1a3040;color:var(--white);}
+.map-btn.green{background:#0a1a0a;color:var(--green);border-color:#1a3a1a;}
+.map-btn.green:hover{background:#1a2e1a;color:var(--white);}
+
+/* ════════════════════════════
+   SECTION DIVIDERS (visual)
+════════════════════════════ */
+.section-divider{
+  border:none;border-top:2px solid var(--border);margin:0;
+  position:relative;
+}
+.section-divider::before{
+  content:attr(data-label);
+  position:absolute;top:-11px;left:24px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;
+  background:var(--black);padding:0 12px;color:var(--muted);
+}
+
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+.site-footer{
+  background:#080a0e;border-top:1px solid var(--border);
+  padding:20px 24px;text-align:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;
+  letter-spacing:3px;color:var(--muted);text-transform:uppercase;
+}
+.site-footer a{color:var(--cblue);text-decoration:none;}
+
+/* ════════════════════════════
+   RESPONSIVE
+════════════════════════════ */
+@media(max-width:900px){
+  .section-cards{grid-template-columns:1fr;}
+  .g2,.g3,.g2-3,.hall-grid,.park-grid,.tips-grid,.tip-grid,.rest-grid,.prohib-grid,.stat-row{grid-template-columns:1fr 1fr;}
+  .page-header h2{font-size:38px;}
+  .page-header{padding:28px 20px 22px;}
+  .landing-hero{padding:44px 20px 36px;}
+  .landing-hero h1{font-size:52px;}
+}
+@media(max-width:540px){
+  .g2,.g3,.g2-3,.hall-grid,.park-grid,.tips-grid,.tip-grid,.rest-grid,.prohib-grid,.stat-row{grid-template-columns:1fr;}
+  .week-grid{grid-template-columns:1fr 1fr;}
+  .landing-hero h1{font-size:40px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SITE-LEVEL NAV
+═══════════════════════════════════════════ -->
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <div class="site-logo">COLAVOL <span>14W</span></div>
+    <div class="site-tabs">
+      <button class="site-tab active" data-page="home" onclick="showPage('home',this)">🏐 Regionals Hub</button>
+      <button class="site-tab" data-page="venue" onclick="showPage('venue',this)">🏛 Venue</button>
+      <button class="site-tab" data-page="energy" onclick="showPage('energy',this)">⚡ Energy Guide</button>
+      <button class="site-tab" data-page="hotel" onclick="showPage('hotel',this)">🏨 Hotel</button>
+    </div>
+    <a class="srva-ext" href="https://www.srva.org/regionals" target="_blank">↗ SRVA Official</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HOME / LANDING PAGE
+═══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <div class="landing-hero">
+    <div class="hero-eyebrow">COLAVOL 14 White · Atlanta, GA</div>
+    <h1><em>Regionals</em><br><span class="white">May 2–3</span></h1>
+    <div class="hero-sub">Everything your team needs for tournament weekend — venue intel, athlete energy prep, and hotel logistics, all in one place.</div>
+    <div class="hero-badges">
+      <span class="hero-badge hb-blue">Day 1 · Sat May 2 · 3pm Start</span>
+      <span class="hero-badge hb-blue">Day 2 · Sun May 3 · 8am Start</span>
+      <span class="hero-badge hb-white">GWCC · Atlanta, GA</span>
+      <span class="hero-badge hb-accent">AC Hotel Buckhead</span>
+    </div>
+  </div>
+
+  <!-- SECTION SELECTION CARDS -->
+  <div class="section-cards">
+
+    <div class="sec-card" onclick="showPage('venue', document.querySelector('[data-page=venue]'))">
+      <div class="card-color-bar ccb-venue"></div>
+      <div class="sec-card-inner">
+        <span class="sec-card-icon">🏛</span>
+        <div class="sec-card-label">Section 1 of 3</div>
+        <div class="sec-card-title venue">Venue Guide</div>
+        <div class="sec-card-desc">Georgia World Congress Center in downtown Atlanta. Court layout, parking decks, directions from Columbus, prohibited items, and insider tips for navigating the complex.</div>
+        <div class="sec-card-tags">
+          <span class="tag-pill tp-blue">Map &amp; Address</span>
+          <span class="tag-pill tp-blue">6 Parking Decks</span>
+          <span class="tag-pill tp-blue">Halls A · B · C</span>
+          <span class="tag-pill tp-muted">Prohibited Items</span>
+          <span class="tag-pill tp-muted">Venue Tips</span>
+        </div>
+        <button class="sec-card-cta cta-venue">Open Venue Guide →</button>
+      </div>
+    </div>
+
+    <div class="sec-card sec-card-accent" onclick="showPage('energy', document.querySelector('[data-page=energy]'))">
+      <div class="card-color-bar ccb-energy"></div>
+      <div class="sec-card-inner">
+        <span class="sec-card-icon">⚡</span>
+        <div class="sec-card-label">Section 2 of 3</div>
+        <div class="sec-card-title energy">Energy Guide</div>
+        <div class="sec-card-desc">A practical, no-fluff athlete nutrition plan for tournament weekend. Pre-tournament meal prep, game day schedules, snack combos, and hydration — the things that actually prevent afternoon fade.</div>
+        <div class="sec-card-tags">
+          <span class="tag-pill tp-green">The Big 3</span>
+          <span class="tag-pill tp-green">Day 1 &amp; Day 2 Plans</span>
+          <span class="tag-pill tp-green">Snack Combos</span>
+          <span class="tag-pill tp-muted">Meal Recipes</span>
+          <span class="tag-pill tp-muted">Hydration Guide</span>
+        </div>
+        <button class="sec-card-cta cta-energy">Open Energy Guide →</button>
+      </div>
+    </div>
+
+    <div class="sec-card sec-card-hotel" onclick="showPage('hotel', document.querySelector('[data-page=hotel]'))">
+      <div class="card-color-bar ccb-hotel"></div>
+      <div class="sec-card-inner">
+        <span class="sec-card-icon">🏨</span>
+        <div class="sec-card-label">Section 3 of 3</div>
+        <div class="sec-card-title hotel">Hotel Guide</div>
+        <div class="sec-card-desc">AC Hotel Buckhead at Phipps Plaza — your base camp for regionals weekend. Directions from Columbus, hotel amenities, nearby restaurants for athlete meals, supplies, and a full weekend logistics plan.</div>
+        <div class="sec-card-tags">
+          <span class="tag-pill tp-accent">AC Hotel Buckhead</span>
+          <span class="tag-pill tp-accent">Directions</span>
+          <span class="tag-pill tp-accent">Food &amp; Fuel</span>
+          <span class="tag-pill tp-muted">Amenities</span>
+          <span class="tag-pill tp-muted">Weekend Tips</span>
+        </div>
+        <button class="sec-card-cta cta-hotel">Open Hotel Guide →</button>
+      </div>
+    </div>
+
+  </div><!-- /section-cards -->
+
+  <!-- QUICK LINKS -->
+  <div class="quick-bar">
+    <div class="quick-bar-inner">
+      <span class="quick-label">Quick Access</span>
+      <button class="qlink" onclick="showPage('venue',document.querySelector('[data-page=venue]'));showSubSection('venue','parking',document.querySelectorAll('.venue-page .sub-nav-btn')[1])">Venue Parking</button>
+      <button class="qlink" onclick="showPage('venue',document.querySelector('[data-page=venue]'));showSubSection('venue','halls',document.querySelectorAll('.venue-page .sub-nav-btn')[2])">Hall Map</button>
+      <button class="qlink" onclick="showPage('energy',document.querySelector('[data-page=energy]'));showSubSection('energy','day1',document.querySelectorAll('.energy-page .sub-nav-btn')[3])">Day 1 Schedule</button>
+      <button class="qlink" onclick="showPage('energy',document.querySelector('[data-page=energy]'));showSubSection('energy','day2',document.querySelectorAll('.energy-page .sub-nav-btn')[5])">Day 2 Schedule</button>
+      <button class="qlink" onclick="showPage('hotel',document.querySelector('[data-page=hotel]'));showSubSection('hotel','directions',document.querySelectorAll('.hotel-page .sub-nav-btn')[1])">Hotel Directions</button>
+      <button class="qlink" onclick="showPage('hotel',document.querySelector('[data-page=hotel]'));showSubSection('hotel','food',document.querySelectorAll('.hotel-page .sub-nav-btn')[3])">Nearby Food</button>
+      <a class="qlink" href="https://www.srva.org/regionals" target="_blank">SRVA Official Site ↗</a>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════
+     VENUE PAGE
+═══════════════════════════════════════════ -->
+<div id="page-venue" class="page venue-page">
+
+  <div class="page-header venue">
+    <div class="ph-eyebrow venue">COLAVOL 14 White · Regionals · Section 1 of 3</div>
+    <h2>Georgia World<br><em>Congress Center</em></h2>
+    <div class="ph-sub">Everything you need to know about getting there, parking, finding your court, and what to bring for tournament weekend.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px;">
+      <span class="hero-badge hb-blue">Sat May 2 · 3pm Start</span>
+      <span class="hero-badge hb-blue">Sun May 3 · 8am Start</span>
+      <span class="hero-badge hb-white">GWCC · Atlanta, GA</span>
+      <a href="https://www.srva.org/regionals" target="_blank" style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border:1px solid var(--border);border-radius:2px;color:var(--muted);text-decoration:none;">↗ SRVA Regionals</a>
+    </div>
+    <button class="ph-back" onclick="showPage('home',document.querySelector('[data-page=home]'))">← Back to Hub</button>
+  </div>
+
+  <div class="subpage-nav venue-page">
+    <div class="subpage-nav-inner">
+      <button class="sub-nav-btn active" onclick="showSubSection('venue','v-map',this)">Map &amp; Address</button>
+      <button class="sub-nav-btn" onclick="showSubSection('venue','v-parking',this)">Parking</button>
+      <button class="sub-nav-btn" onclick="showSubSection('venue','v-halls',this)">Hall Layout</button>
+      <button class="sub-nav-btn" onclick="showSubSection('venue','v-prohibited',this)">Prohibited Items</button>
+      <button class="sub-nav-btn" onclick="showSubSection('venue','v-tips',this)">Venue Tips</button>
+    </div>
+  </div>
+
+  <div class="page-container">
+
+    <!-- MAP & ADDRESS -->
+    <div id="v-map" class="sub-section active">
+      <div class="sec-hd">
+        <span class="sec-badge b-blue">Location</span>
+        <div><div class="sec-title">Map &amp; Getting There</div><div class="sec-meta">Georgia World Congress Center · Downtown Atlanta</div></div>
+      </div>
+      <div class="callout">
+        <strong>Address:</strong> 285 Andrew Young International Blvd NW, Atlanta, GA 30313 ·
+        <a href="https://maps.google.com/?q=Georgia+World+Congress+Center+Atlanta+GA" target="_blank">Open in Google Maps ↗</a>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-label">Directions by Route</div>
+        <div class="dir-tabs">
+          <button class="dir-tab active" onclick="dirTab('v-south',this)">From Columbus / South</button>
+          <button class="dir-tab" onclick="dirTab('v-north',this)">From North</button>
+          <button class="dir-tab" onclick="dirTab('v-east',this)">From East</button>
+          <button class="dir-tab" onclick="dirTab('v-marta',this)">MARTA Transit</button>
+        </div>
+        <div id="v-south" class="dir-content active">
+          <ul class="bl">
+            <li>Take <strong>I-185 N</strong> to I-85 N toward Atlanta (~90 miles from Columbus)</li>
+            <li>Merge onto <strong>I-285 E</strong> toward Atlanta, then take I-85 N into downtown</li>
+            <li>Take exit <strong>248C</strong> for Spring St NW toward downtown</li>
+            <li>Turn right on <strong>Andrew Young International Blvd NW</strong> — GWCC is on your right</li>
+            <li><strong>Plan for I-285/I-85 traffic</strong> — add 20–30 min buffer on Saturday afternoon. Leave Columbus by 11am for a 3pm start.</li>
+          </ul>
+        </div>
+        <div id="v-north" class="dir-content">
+          <ul class="bl">
+            <li>Take <strong>I-75 S</strong> or <strong>I-85 S</strong> toward downtown Atlanta</li>
+            <li>Take exit <strong>249C</strong> for Ivan Allen Jr Blvd / Marietta St</li>
+            <li>Follow signs toward GWCC / State Farm Arena / Centennial Olympic Park</li>
+            <li>Turn left on <strong>Andrew Young International Blvd NW</strong></li>
+          </ul>
+        </div>
+        <div id="v-east" class="dir-content">
+          <ul class="bl">
+            <li>Take <strong>I-20 W</strong> toward downtown Atlanta</li>
+            <li>Take exit <strong>56A</strong> for Spring St NW</li>
+            <li>Head north on Spring St, turn left on Andrew Young International Blvd NW</li>
+            <li>GWCC is on the left, adjacent to State Farm Arena</li>
+          </ul>
+        </div>
+        <div id="v-marta" class="dir-content">
+          <ul class="bl">
+            <li>Red/Blue line to <strong>State Farm Arena / Vine City Station</strong></li>
+            <li>Walk north on Northside Dr or use the pedestrian skybridge</li>
+            <li>Good backup if venue parking is sold out Saturday afternoon</li>
+            <li>Check MARTA app for schedules — trains run frequently on weekends</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px;">
+        <strong>Quick Reference:</strong> 285 Andrew Young International Blvd NW, Atlanta, GA 30313 · Adjacent to State Farm Arena and Centennial Olympic Park · MARTA: State Farm Arena / Vine City Station (Red/Blue line)
+      </div>
+    </div>
+
+    <!-- PARKING -->
+    <div id="v-parking" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-blue">Parking</span>
+        <div><div class="sec-title">GWCC Parking Decks</div><div class="sec-meta">Six options — choose based on your hall assignment</div></div>
+      </div>
+      <div class="callout">
+        <strong>Tip:</strong> Check your court assignment first. If you're in Hall A or B, the Green Deck is your best bet. Hall C — use Blue or Yellow Lot on the north side. Pre-purchase parking online via ParkMobile or the GWCC website if available.
+      </div>
+      <div class="park-grid" style="margin-top:20px;">
+        <div class="park-card park-green">
+          <div class="park-name">Green Deck</div>
+          <div class="park-sub">Closest · Hall A / B Side</div>
+          <div class="park-detail">Best option for most GWCC events. Located on the east side near the Chick-fil-A College Football Hall of Fame. Short walk to Hall A/B main entrances via the covered walkway.</div>
+          <div class="park-note">★ Recommended first choice — fills up early</div>
+        </div>
+        <div class="park-card park-blue">
+          <div class="park-name">Blue Lot</div>
+          <div class="park-sub">Hall B / C Side · Surface Lot</div>
+          <div class="park-detail">Open-air surface lot on Joseph E. Boone Blvd NW. Good for Hall B and C access on the northwest side. Typically more available than the Green Deck later in the day.</div>
+          <div class="park-note">Surface lot — no shade. Bring the cooler from here.</div>
+        </div>
+        <div class="park-card park-yellow">
+          <div class="park-name">Yellow Lot</div>
+          <div class="park-sub">Far North · Budget Option</div>
+          <div class="park-detail">Located north of GWCC on the far end. More of a walk to main entrances — add 5–10 minutes. Often cheaper and fills last.</div>
+          <div class="park-note">Longer walk but usually available</div>
+        </div>
+        <div class="park-card park-orange">
+          <div class="park-name">Orange Deck</div>
+          <div class="park-sub">South Side · Near Stadium</div>
+          <div class="park-detail">Near the Backyard (Home Depot area) and Andrew Young Blvd. Good access point for the south side of GWCC. Multi-level deck, covered parking.</div>
+          <div class="park-note">Near Mercedes-Benz Stadium side</div>
+        </div>
+        <div class="park-card park-red">
+          <div class="park-name">Red Deck</div>
+          <div class="park-sub">Underground · Central</div>
+          <div class="park-detail">Underground parking deck beneath the International Plaza. Central location. Enter from Andrew Young International Blvd. MARTA connection nearby.</div>
+          <div class="park-note">Underground — good in bad weather</div>
+        </div>
+        <div class="park-card park-silver">
+          <div class="park-name">Silver Deck</div>
+          <div class="park-sub">Underground · South</div>
+          <div class="park-detail">Underground deck to the south near Mitchell St. Useful overflow when other decks fill. Note: longer walk to volleyball courts.</div>
+          <div class="park-note">Furthest option — use as last resort</div>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="sub-label">Marshalling Yard</div>
+      <div class="card">
+        <div class="card-label">Team Buses / Large Vehicles</div>
+        <div class="card-title blue">Marshalling Yard · North of GWCC</div>
+        <ul class="bl">
+          <li>Charter buses and coaches stage here — do not attempt to park a bus in a standard deck</li>
+          <li>Player drop-off: use the International Plaza area or Andrew Young Blvd curb drop-off</li>
+          <li>Coordinate with your club director on bus arrival/staging times</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HALL LAYOUT -->
+    <div id="v-halls" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-green">Venue</span>
+        <div><div class="sec-title">GWCC Hall Layout</div><div class="sec-meta">Halls A, B, and C — knowing which courts are where saves time</div></div>
+      </div>
+      <div class="callout green">
+        <strong>Check your schedule for court assignments.</strong> SRVA will assign specific court numbers — knowing which hall those courts fall in will save you a lot of walking. Halls are A (east), B (center), and C (west/north). Give yourself 10 minutes to walk between halls.
+      </div>
+      <div class="hall-grid" style="margin-top:20px;">
+        <div class="hall-card" data-hall="A" style="border-color:var(--accent);">
+          <div class="hall-letter" style="color:var(--accent);">A</div>
+          <div class="hall-name">Hall A · East Wing</div>
+          <div style="font-size:13.5px;color:#9aa3b0;line-height:1.6;">The largest single exhibit hall in the complex. Located on the east side of GWCC, adjacent to Andrew Young International Blvd and closest to the Green Deck parking.</div>
+          <ul class="bl" style="margin-top:10px;">
+            <li>Closest to <strong>Green Deck</strong> parking</li>
+            <li>Main entrance off Andrew Young Blvd</li>
+            <li>Largest open floor — most courts typically here</li>
+          </ul>
+          <span class="hall-tag" style="background:#201e08;color:var(--accent);">Primary Hall</span>
+        </div>
+        <div class="hall-card" data-hall="B" style="border-color:var(--cblue);">
+          <div class="hall-letter" style="color:var(--cblue);">B</div>
+          <div class="hall-name">Hall B · Center</div>
+          <div style="font-size:13.5px;color:#9aa3b0;line-height:1.6;">The central hall connecting A and C. Mid-sized exhibit space often used for overflow courts, warm-up areas, or additional pools.</div>
+          <ul class="bl" style="margin-top:10px;">
+            <li>Connects Hall A and Hall C via interior corridor</li>
+            <li>Often used for warm-up or secondary courts</li>
+            <li>Restrooms and concessions on this level</li>
+          </ul>
+          <span class="hall-tag" style="background:var(--cblue-bg);color:var(--cblue);">Center Connector</span>
+        </div>
+        <div class="hall-card" data-hall="C" style="border-color:var(--green);">
+          <div class="hall-letter" style="color:var(--green);">C</div>
+          <div class="hall-name">Hall C · Northwest Wing</div>
+          <div style="font-size:13.5px;color:#9aa3b0;line-height:1.6;">The northwestern hall, furthest from the Green Deck. If your courts are in Hall C, the Blue Lot or Yellow Lot (north side) are better parking options.</div>
+          <ul class="bl" style="margin-top:10px;">
+            <li>Best accessed from <strong>Blue Lot</strong> or <strong>Yellow Lot</strong></li>
+            <li>Northside Dr NW entrance is closest</li>
+            <li>Signia by Hilton hotel connects at this end</li>
+          </ul>
+          <span class="hall-tag" style="background:#0a1a0e;color:var(--green);">Northwest Wing</span>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="sub-label">Inside the Venue</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-label">Navigating GWCC</div>
+          <div class="card-title blue">General Info</div>
+          <ul class="bl green">
+            <li>Court assignments come from SRVA — check your schedule app before arrival</li>
+            <li>Interior corridors connect all three halls — no need to go outside to switch halls</li>
+            <li>Spectator seating is typically bleachers along court perimeters</li>
+            <li>Cell service can be spotty inside large halls — download schedules before entering</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Amenities</div>
+          <div class="card-title green">What's Inside</div>
+          <ul class="bl green">
+            <li><strong>Concessions:</strong> Available in the halls — hot dogs, pretzels, nachos, drinks</li>
+            <li><strong>CNN Center Food Court:</strong> Connected on the east side — includes Chick-fil-A</li>
+            <li><strong>Restrooms:</strong> Throughout all halls — can have lines between matches</li>
+            <li><strong>First Aid:</strong> Medical staff near the tournament office</li>
+            <li><strong>ATM:</strong> Located in lobby areas and CNN Center</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:20px;">
+        <strong>Pro tip:</strong> Walk your halls and find your assigned courts before the first match. Arrive early enough to do a quick recon lap — finding Court 47 cold can eat into warm-up time.
+      </div>
+    </div>
+
+    <!-- PROHIBITED ITEMS -->
+    <div id="v-prohibited" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-red">Rules</span>
+        <div><div class="sec-title">Prohibited Items</div><div class="sec-meta">What to leave home — and what's allowed</div></div>
+      </div>
+      <div class="callout red">
+        <strong>GWCC and SRVA enforce bag checks at regionals.</strong> Items not allowed will be confiscated or you'll be turned away. Check <a href="https://www.srva.org/regionals" target="_blank">srva.org/regionals</a> closer to the event for any updated policies.
+      </div>
+      <div class="prohib-grid" style="margin-top:20px;">
+        <div class="prohib-card">
+          <div class="prohib-head"><span class="prohib-icon">🚫</span><span class="prohib-title">Not Allowed — Leave at Home</span></div>
+          <ul class="check-list">
+            <li><span class="x-mark">✕</span>Outside alcoholic beverages</li>
+            <li><span class="x-mark">✕</span>Glass containers of any kind</li>
+            <li><span class="x-mark">✕</span>Weapons, knives, or sharp objects</li>
+            <li><span class="x-mark">✕</span>Air horns, vuvuzelas, or loud noise devices</li>
+            <li><span class="x-mark">✕</span>Laser pointers</li>
+            <li><span class="x-mark">✕</span>Selfie sticks / tripods on the court floor</li>
+            <li><span class="x-mark">✕</span>Large banners or flags that block sightlines</li>
+            <li><span class="x-mark">✕</span>Drones or remote-controlled devices</li>
+            <li><span class="x-mark">✕</span>Pets (except service animals)</li>
+            <li><span class="x-mark">✕</span>Skateboards, scooters, or rollerblades</li>
+            <li><span class="x-mark">✕</span>Unauthorized professional video cameras</li>
+            <li><span class="x-mark">✕</span>Outside hard-sided coolers over a certain size</li>
+          </ul>
+        </div>
+        <div class="prohib-card">
+          <div class="prohib-head"><span class="prohib-icon">✅</span><span class="prohib-title ok">Allowed — Bring These</span></div>
+          <ul class="check-list">
+            <li><span class="chk-mark">✓</span>Water bottles (sealed/closed lid) — plastic only</li>
+            <li><span class="chk-mark">✓</span>Soft-sided coolers and lunch bags for team snacks</li>
+            <li><span class="chk-mark">✓</span>Team food and snacks from home</li>
+            <li><span class="chk-mark">✓</span>Volleyball gear bags and backpacks</li>
+            <li><span class="chk-mark">✓</span>Folding chairs (check venue rules)</li>
+            <li><span class="chk-mark">✓</span>Cameras (personal/non-professional) and phones</li>
+            <li><span class="chk-mark">✓</span>Signs and banners that don't block views</li>
+            <li><span class="chk-mark">✓</span>Cowbells (check SRVA rules — usually ok)</li>
+            <li><span class="chk-mark">✓</span>Foam rollers and personal recovery tools</li>
+            <li><span class="chk-mark">✓</span>First aid kits (team medical bags)</li>
+            <li><span class="chk-mark">✓</span>Strollers (designated areas may apply)</li>
+            <li><span class="chk-mark">✓</span>Service animals with proper identification</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="sub-label">Bag Policy</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-label">What to Expect</div>
+          <div class="card-title blue">Entry &amp; Bag Check</div>
+          <ul class="bl red">
+            <li>Bags will be checked at entry — have your team bags open and ready</li>
+            <li>Soft-sided coolers are generally permitted for team food and snacks</li>
+            <li>Security may ask you to remove items — cooperate and move through quickly</li>
+            <li>Wristbands or stamps may be issued for re-entry — ask at the gate</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Confirm Before You Go</div>
+          <div class="card-title accent">Check SRVA Closer to Event</div>
+          <ul class="bl accent">
+            <li>SRVA may publish updated policies 1–2 weeks before regionals</li>
+            <li>Check <a href="https://www.srva.org/regionals" target="_blank" style="color:var(--cblue);">srva.org/regionals</a> for the official prohibited items list</li>
+            <li>GWCC may have additional venue-level rules that supersede tournament rules</li>
+            <li>When in doubt, leave it home — arguing at the gate wastes warm-up time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENUE TIPS -->
+    <div id="v-tips" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-gray">Tips</span>
+        <div><div class="sec-title">Venue Tips</div><div class="sec-meta">Things that make tournament day easier</div></div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip"><div class="tip-icon">🕐</div><div class="tip-title">Arrive Early</div><div class="tip-body">Saturday: Aim to arrive by 1:30–2pm for a 3pm first match. Sunday: Arrive by 7:15am for an 8am start. Finding parking and walking to Hall A can take 15–20 minutes alone.</div></div>
+        <div class="tip"><div class="tip-icon">📱</div><div class="tip-title">Download Before You Go</div><div class="tip-body">Cell service is unreliable in large convention halls with hundreds of people. Download your schedule, court assignments, and any bracket apps before leaving the hotel or car. Screenshot everything.</div></div>
+        <div class="tip"><div class="tip-icon">👟</div><div class="tip-title">Comfortable Shoes</div><div class="tip-body">GWCC is enormous. Parents and coaches will log several miles across a tournament day walking between halls, parking, and food. Bring comfortable walking shoes.</div></div>
+        <div class="tip"><div class="tip-icon">🌡️</div><div class="tip-title">Layer Up</div><div class="tip-body">Convention halls run cold when AC is cranked — especially early morning. Players sitting between matches can get chilled fast. A team hoodie or light jacket in the bag is worth it.</div></div>
+        <div class="tip"><div class="tip-icon">🅿️</div><div class="tip-title">Plan Parking in Advance</div><div class="tip-body">GWCC parking fills fast during large events. Check if online pre-purchase is available via ParkMobile or the GWCC website. Set a meeting point in case your group gets separated.</div></div>
+        <div class="tip"><div class="tip-icon">🍔</div><div class="tip-title">CNN Center Food Court</div><div class="tip-body">For a better meal than concession food, CNN Center connects to GWCC on the east side and has a food court with more options including Chick-fil-A.</div></div>
+        <div class="tip"><div class="tip-icon">📍</div><div class="tip-title">Set a Team Meet Spot</div><div class="tip-body">Pick one specific spot as the rally point before each match. Text doesn't always work well inside the halls — have a physical meeting place pre-agreed.</div></div>
+        <div class="tip"><div class="tip-icon">🔋</div><div class="tip-title">Charge Everything</div><div class="tip-body">Phones, tablets, portable battery packs — charge them all the night before. Two long tournament days will drain batteries. Bring a small power bank.</div></div>
+        <div class="tip"><div class="tip-icon">🏨</div><div class="tip-title">Stay Close</div><div class="tip-body">The Signia by Hilton connects directly to GWCC Hall C — walking distance with no parking needed Sunday morning. Or look for hotels on the MARTA line to skip parking stress entirely.</div></div>
+      </div>
+      <hr class="rule">
+      <div class="sub-label">Quick Reference Cheat Sheet</div>
+      <div class="card">
+        <table class="tbl">
+          <thead><tr><th>What</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Venue</td><td>Georgia World Congress Center · 285 Andrew Young International Blvd NW, Atlanta, GA 30313</td></tr>
+            <tr><td>Day 1 Start</td><td>Saturday May 2 · First match 3:00pm · Arrive by 1:30–2pm</td></tr>
+            <tr><td>Day 2 Start</td><td>Sunday May 3 · First match 8:00am · Arrive by 7:15am</td></tr>
+            <tr><td>Best Parking (Hall A/B)</td><td>Green Deck — east side, adjacent to Centennial Olympic Park</td></tr>
+            <tr><td>Best Parking (Hall C)</td><td>Blue Lot or Yellow Lot — north/northwest side</td></tr>
+            <tr><td>MARTA Stop</td><td>State Farm Arena / Vine City Station (Red/Blue line)</td></tr>
+            <tr><td>Food Inside</td><td>Concessions in halls + CNN Center food court (connected, east side)</td></tr>
+            <tr><td>Tournament Info</td><td><a href="https://www.srva.org/regionals" target="_blank" style="color:var(--cblue);">srva.org/regionals ↗</a></td></tr>
+            <tr><td>Bring</td><td>Soft-sided cooler, closed water bottles, comfortable shoes, portable charger, team snacks, layers</td></tr>
+            <tr><td>Leave Home</td><td>Glass containers, air horns, large hard coolers, weapons, drones, pets</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /page-container -->
+</div><!-- /page-venue -->
+
+
+<!-- ═══════════════════════════════════════════
+     ENERGY PAGE
+═══════════════════════════════════════════ -->
+<div id="page-energy" class="page energy-page">
+
+  <div class="page-header energy">
+    <div class="ph-eyebrow energy">COLAVOL 14 White · Regionals · Section 2 of 3</div>
+    <h2>Keep Her<br><em>Energized</em></h2>
+    <div class="ph-sub">A simple, realistic guide for tournament weekend. No complicated protocols — just the things that actually make the biggest difference for a two-day tournament.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+      <span class="hero-badge" style="background:#181a08;color:#c0a830;border:1px solid #3a3008;">Day 1 · Sat May 2 · 3pm</span>
+      <span class="hero-badge" style="background:#0e1a0e;color:var(--green);border:1px solid #1a3a1a;">Day 2 · Sun May 3 · 8am</span>
+    </div>
+    <button class="ph-back" onclick="showPage('home',document.querySelector('[data-page=home]'))">← Back to Hub</button>
+  </div>
+
+  <div class="subpage-nav energy-page">
+    <div class="subpage-nav-inner">
+      <button class="sub-nav-btn active" onclick="showSubSection('energy','e-overview',this)">The Big 3</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-lastweek',this)">Last Week</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-friday',this)">Fri May 1</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-day1',this)">Sat May 2</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-satnight',this)">Sat Night</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-day2',this)">Sun May 3</button>
+      <button class="sub-nav-btn" onclick="showSubSection('energy','e-snacks',this)">Snacks &amp; Drinks</button>
+    </div>
+  </div>
+
+  <div class="page-container">
+
+    <!-- THE BIG 3 -->
+    <div id="e-overview" class="sub-section active">
+      <div class="sec-hd">
+        <span class="sec-badge b-green">Start Here</span>
+        <div><div class="sec-title">The Big 3 Things That Actually Matter</div><div class="sec-meta">If you do nothing else, do these three things</div></div>
+      </div>
+      <div class="callout green">
+        <strong>The real reason teams fade in the afternoon or Day 2:</strong> They didn't eat right after matches, they showed up slightly dehydrated, and they didn't sleep enough the night before. You don't need to be perfect — you just need to fix those three things.
+      </div>
+      <div class="g3" style="margin-top:20px;">
+        <div class="card" style="border-color:var(--accent);">
+          <div class="card-label">The #1 Thing</div>
+          <div class="card-title accent" style="font-size:22px;">Eat Within 20 Min After Each Match</div>
+          <p style="font-size:14px;color:#9aa3b0;line-height:1.6;">Within 20 minutes of a match ending, get carbs and protein into her — banana + string cheese, granola bar + fruit, peanut butter crackers. This is the single biggest lever you have for how she feels during the next match.</p>
+        </div>
+        <div class="card" style="border-color:var(--cblue);">
+          <div class="card-label">The #2 Thing</div>
+          <div class="card-title blue" style="font-size:22px;">Hydrate Tonight &amp; Tomorrow Morning</div>
+          <p style="font-size:14px;color:#9aa3b0;line-height:1.6;">Dehydration doesn't start the day of the tournament — it starts 12–24 hours before. 16–24 oz of water tonight and a full water bottle first thing tomorrow morning will carry her through the morning matches.</p>
+        </div>
+        <div class="card" style="border-color:var(--green);">
+          <div class="card-label">The #3 Thing</div>
+          <div class="card-title green" style="font-size:22px;">Sleep 8–9 Hours Before Day 1</div>
+          <p style="font-size:14px;color:#9aa3b0;line-height:1.6;">Sleep is when muscle glycogen replenishes and the body resets. Late nights Friday night will cost real energy on Saturday afternoon. Phones off, lights out by 9:30–10pm. Nothing about the night before matters more than this.</p>
+        </div>
+      </div>
+      <div class="callout green" style="margin-top:20px;">
+        <strong>The Simple Framework:</strong> Eat within 20 min of each match ending · Sip water constantly (not guzzle) · Get 8+ hours of sleep before both days · Don't skip breakfast · Keep snacks in the bag at all times
+      </div>
+    </div>
+
+    <!-- LAST WEEK -->
+    <div id="e-lastweek" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-yellow">Pre-Tournament</span>
+        <div><div class="sec-title">Last Week Meal Plan</div><div class="sec-meta">Mon Apr 28 – Fri May 2 · Building the fuel tank</div></div>
+      </div>
+      <div class="callout yellow">
+        <strong>The goal this week:</strong> Build glycogen stores gradually with consistent carb-forward meals. Don't try anything new or unusual. Familiar, clean food she already likes. Bigger carb portions Wednesday and Thursday especially.
+      </div>
+      <div class="week-grid" style="margin-top:20px;">
+        <div class="day-col">
+          <div class="day-head"><div class="day-name">Monday</div><div class="day-date">Apr 28</div></div>
+          <div class="day-meals">
+            <div><div class="slot-lbl">Breakfast</div><div class="slot-meal">Oatmeal + banana + eggs</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Lunch</div><div class="slot-meal">Turkey sandwich on wheat + apple</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Dinner</div><div class="slot-meal">Pasta + meat sauce — big portion</div></div>
+          </div>
+        </div>
+        <div class="day-col">
+          <div class="day-head"><div class="day-name">Tuesday</div><div class="day-date">Apr 29</div></div>
+          <div class="day-meals">
+            <div><div class="slot-lbl">Breakfast</div><div class="slot-meal">Yogurt + granola + berries</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Lunch</div><div class="slot-meal">Rice + chicken or leftovers</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Dinner</div><div class="slot-meal">Stir fry with rice + chicken/beef</div></div>
+          </div>
+        </div>
+        <div class="day-col">
+          <div class="day-head"><div class="day-name">Wednesday</div><div class="day-date">Apr 30</div></div>
+          <div class="day-meals">
+            <div><div class="slot-lbl">Breakfast</div><div class="slot-meal">Eggs + toast + orange juice</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Lunch</div><div class="slot-meal">Pasta salad or chicken wrap</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Dinner</div><div class="slot-meal">Baked chicken + sweet potato — eat a bigger portion tonight</div></div>
+          </div>
+        </div>
+        <div class="day-col">
+          <div class="day-head"><div class="day-name">Thursday</div><div class="day-date">May 1</div></div>
+          <div class="day-meals">
+            <div><div class="slot-lbl">Breakfast</div><div class="slot-meal">Oatmeal + banana + boiled egg</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Lunch</div><div class="slot-meal">Turkey + cheese on wheat + fruit</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Dinner</div><div class="slot-meal">Spaghetti + meat sauce — eat a big portion, this matters</div></div>
+          </div>
+        </div>
+        <div class="day-col hl">
+          <div class="day-head"><div class="day-name">Friday</div><div class="day-date">May 2 Eve</div></div>
+          <div class="day-meals">
+            <div><div class="slot-lbl">Breakfast</div><div class="slot-meal">Oatmeal + eggs + OJ</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Lunch (BIG)</div><div class="slot-meal hl">Pasta or rice bowl — main fuel meal of the day</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Dinner (lighter)</div><div class="slot-meal">Rice + chicken — done by 7pm</div></div>
+            <hr class="slot-div">
+            <div><div class="slot-lbl">Night</div><div class="slot-meal">Pack bag. Bed by 10pm.</div></div>
+          </div>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="sub-label">Simple Dinners That Work</div>
+      <div class="g2">
+        <div class="food-card">
+          <div class="food-top">
+            <div class="food-when">Any Night · 25 min</div>
+            <div class="food-name">Pasta + Meat Sauce</div>
+            <div class="food-sub">Make it Monday and again Thursday with bigger portions</div>
+          </div>
+          <div class="acc">
+            <button class="acc-btn" onclick="acc(this)">What You Need &amp; How To Make It <span class="acc-arrow">▼</span></button>
+            <div class="acc-body">
+              <p style="margin-bottom:10px;"><strong style="color:var(--white)">Ingredients:</strong></p>
+              <ul>
+                <li><span>Pasta (any shape)</span><span class="amt">12 oz box</span></li>
+                <li><span>Ground beef or turkey</span><span class="amt">1 lb</span></li>
+                <li><span>Jarred pasta sauce</span><span class="amt">1 jar</span></li>
+                <li><span>Garlic powder, Italian seasoning</span><span class="amt">1 tsp each</span></li>
+              </ul>
+              <p style="margin-top:12px;"><strong style="color:var(--white)">How to make it:</strong></p>
+              <ol class="simple" style="margin-top:8px;">
+                <li>Boil salted water, cook pasta until done. Drain.</li>
+                <li>Brown the meat in a pan. Pour in the sauce, simmer 5 min.</li>
+                <li>Mix with pasta. Top with parmesan. Serve with garlic bread.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="food-card">
+          <div class="food-top">
+            <div class="food-when">Wednesday Night · 30 min</div>
+            <div class="food-name">Baked Chicken + Sweet Potato</div>
+            <div class="food-sub">One pan — sweet potato is one of the best things she can eat this week.</div>
+          </div>
+          <div class="acc">
+            <button class="acc-btn" onclick="acc(this)">What You Need &amp; How To Make It <span class="acc-arrow">▼</span></button>
+            <div class="acc-body">
+              <p style="margin-bottom:10px;"><strong style="color:var(--white)">Ingredients:</strong></p>
+              <ul>
+                <li><span>Chicken thighs or breasts</span><span class="amt">4 pieces</span></li>
+                <li><span>Sweet potatoes, cubed</span><span class="amt">2 large</span></li>
+                <li><span>Olive oil</span><span class="amt">2–3 tbsp</span></li>
+                <li><span>Garlic powder, paprika, salt, pepper</span><span class="amt">Generous</span></li>
+              </ul>
+              <p style="margin-top:12px;"><strong style="color:var(--white)">How to make it:</strong></p>
+              <ol class="simple" style="margin-top:8px;">
+                <li>Heat oven to 425°F. Toss sweet potato in oil and seasoning, spread on sheet pan.</li>
+                <li>Roast 15 min, then add seasoned chicken and any veggies to the pan.</li>
+                <li>Roast another 20–22 min until chicken is cooked through.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div id="e-friday" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-yellow">Fri May 1</span>
+        <div><div class="sec-title">Friday — Fuel Loading Day</div><div class="sec-meta">The last full day before Day 1 · Everything matters today</div></div>
+      </div>
+      <div class="callout yellow">
+        <strong>Friday Priority:</strong> Big lunch (pasta or rice bowl), lighter dinner done by 7pm, hydrate all day, pack the bag, and get to bed by 10pm. The tournament starts winning or losing Friday night.
+      </div>
+      <div class="sched">
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">7am</div><div class="sched-sub">Morning</div></div>
+          <div class="sched-body"><div class="sched-name">Breakfast</div><div class="sched-detail">Oatmeal + eggs + orange juice. Start hydrating immediately — full water bottle before noon.</div></div>
+        </div>
+        <div class="sched-row hl">
+          <div class="sched-time"><div class="sched-tm">12pm</div><div class="sched-sub">Midday</div></div>
+          <div class="sched-body"><div class="sched-name">The Big Lunch — Main Fuel Meal</div><div class="sched-detail">Chicken pasta (olive oil), rice bowl, or big pasta with meat sauce. This is the primary fuel meal. Eat a real, full portion — this is the most important meal before the tournament.</div></div>
+        </div>
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">6pm</div><div class="sched-sub">Evening</div></div>
+          <div class="sched-body"><div class="sched-name">Lighter Dinner</div><div class="sched-detail">Rice + grilled chicken or simple pasta — keep it light. Finish eating by 7pm to allow digestion before bed.</div></div>
+        </div>
+        <div class="sched-row warn">
+          <div class="sched-time"><div class="sched-tm">10pm</div><div class="sched-sub">Bedtime</div></div>
+          <div class="sched-body"><div class="sched-name">Phones Off, Lights Out</div><div class="sched-detail">Non-negotiable. 8–9 hours of sleep before Day 1. Phone charging outside the bedroom. Drinking 8–12 oz of water before sleep helps start Saturday hydrated.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAT MAY 2 — DAY 1 -->
+    <div id="e-day1" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-orange">Day 1</span>
+        <div><div class="sec-title">Saturday May 2 — Game Day</div><div class="sec-meta">First match 3pm · Arrive by 1:30–2pm</div></div>
+      </div>
+      <div class="callout orange">
+        <strong>Day 1 key:</strong> Big breakfast, steady snacking between matches, water all day. The 3pm start gives you time for a solid breakfast and a light pre-match meal. Don't arrive hungry.
+      </div>
+      <div class="sched">
+        <div class="sched-row hl">
+          <div class="sched-time"><div class="sched-tm">8am</div><div class="sched-sub">Morning</div></div>
+          <div class="sched-body"><div class="sched-name">Breakfast — Biggest Meal of the Morning</div><div class="sched-detail">2 eggs scrambled + toast + oatmeal + OJ. Start a full water bottle at breakfast and sip it constantly.</div></div>
+        </div>
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">12pm</div><div class="sched-sub">Midday</div></div>
+          <div class="sched-body"><div class="sched-name">Pre-Tournament Lunch (Light)</div><div class="sched-detail">Rice bowl or a chicken wrap — keep it light since the first match is at 3pm. Nothing heavy. Finish eating by 1pm at the latest.</div></div>
+        </div>
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">3pm+</div><div class="sched-sub">Matches</div></div>
+          <div class="sched-body"><div class="sched-name">Between Matches — Snack Within 20 Min</div><div class="sched-detail">Banana + string cheese, granola bar + fruit, or PB crackers immediately after each match. Keep Gatorade in the bag — sip constantly, don't chug.</div></div>
+        </div>
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">8pm</div><div class="sched-sub">Evening</div></div>
+          <div class="sched-body"><div class="sched-name">Post-Tournament Meal</div><div class="sched-detail">Real dinner — pasta, rice bowl, or rotisserie chicken with rice. Eat within an hour of finishing. This meal becomes tomorrow's fuel. Drink 16 oz of water or Gatorade with dinner.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAT NIGHT -->
+    <div id="e-satnight" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-blue">Sat Night</span>
+        <div><div class="sec-title">Saturday Night Recovery</div><div class="sec-meta">Day 2 starts in ~12 hours · Recovery matters now</div></div>
+      </div>
+      <div class="callout">
+        <strong>Saturday night sets up Sunday completely.</strong> What you do tonight determines how she feels at 8am. The three priorities: eat a real dinner, drink water, and sleep 8+ hours.
+      </div>
+      <div class="g2" style="margin-top:20px;">
+        <div class="card" style="border-color:var(--green);">
+          <div class="card-label">Tonight's Mission</div>
+          <div class="card-title green">Recovery Checklist</div>
+          <ul class="bl green">
+            <li>Eat dinner within 60 min of getting back — carbs + protein</li>
+            <li>Drink 16–24 oz of water or Gatorade with dinner</li>
+            <li>Stretch or light foam roll for 10 minutes</li>
+            <li>Prep overnight oats for Sunday breakfast before bed</li>
+            <li>Pack Sunday's snack bag tonight — don't do it at 6am</li>
+            <li>Charge everything: phone, tablet, portable battery</li>
+            <li>Phone off by 9:30pm. Lights out by 10pm.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Overnight Oats for Sunday</div>
+          <div class="card-title accent">Prep Tonight → Ready at 6am</div>
+          <ol class="simple">
+            <li>Mix ½ cup oats + ½ cup yogurt + ½ cup milk + honey in a mason jar or container.</li>
+            <li>Put it in the fridge tonight.</li>
+            <li>Sunday morning: stir, add sliced banana and a spoon of peanut butter.</li>
+            <li>Done in 2 minutes. No cooking at 6am.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUN MAY 3 — DAY 2 -->
+    <div id="e-day2" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-green">Day 2</span>
+        <div><div class="sec-title">Sunday May 3 — Game Day 2</div><div class="sec-meta">First match 8am · Arrive by 7:15am</div></div>
+      </div>
+      <div class="callout green">
+        <strong>Day 2 key:</strong> Early wake means eating something is better than nothing. Overnight oats prep the night before is your best friend. Hydrate before you leave the hotel — sipping in the car ride counts.
+      </div>
+      <div class="sched">
+        <div class="sched-row warn">
+          <div class="sched-time"><div class="sched-tm">6am</div><div class="sched-sub">Wake Up</div></div>
+          <div class="sched-body"><div class="sched-name">First Thing — Water Immediately</div><div class="sched-detail">Drink 12–16 oz of water as soon as she wakes up. The body is dehydrated from overnight. This is the most important morning habit.</div></div>
+        </div>
+        <div class="sched-row hl">
+          <div class="sched-time"><div class="sched-tm">6:15am</div><div class="sched-sub">Breakfast</div></div>
+          <div class="sched-body"><div class="sched-name">Eat Before You Leave</div><div class="sched-detail">Overnight oats from the fridge + banana + peanut butter. Or AC Kitchen if there's time. Something is always better than nothing — even a banana and granola bar in the car.</div></div>
+        </div>
+        <div class="sched-row">
+          <div class="sched-time"><div class="sched-tm">8am+</div><div class="sched-sub">Matches</div></div>
+          <div class="sched-body"><div class="sched-name">Between Matches — Same Protocol as Day 1</div><div class="sched-detail">Snack within 20 min of each match. Keep electrolytes going — Day 2 fatigue hits harder because the body is already depleted. Coconut water or diluted Gatorade.</div></div>
+        </div>
+        <div class="sched-row hl">
+          <div class="sched-time"><div class="sched-tm">Noon</div><div class="sched-sub">Lunch</div></div>
+          <div class="sched-body"><div class="sched-name">Packed Lunch — Rotisserie Chicken Wrap</div><div class="sched-detail">Roll up leftover rotisserie chicken + rice + cheese in a tortilla Saturday night, wrap in foil, put in fridge. Grab it Sunday morning. Zero prep. Real fuel. No tournament concession stand needed.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNACKS & DRINKS -->
+    <div id="e-snacks" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-green">Snacks</span>
+        <div><div class="sec-title">Snacks &amp; Drinks</div><div class="sec-meta">Simple combos that actually work — no specialty store required</div></div>
+      </div>
+      <div class="sub-label">Post-Match Snack Combos — Eat Within 15–20 Min</div>
+      <div class="g3">
+        <div class="snack-card"><div class="snack-lbl">Combo #1 · Easiest</div><div class="snack-name">Banana + String Cheese</div><div class="snack-detail">Pre-peel the banana and put it in a bag before leaving the house. Grab it and a string cheese right after the whistle. 90 seconds to eat. This combo is enough.</div></div>
+        <div class="snack-card"><div class="snack-lbl">Combo #2 · Crunchy</div><div class="snack-name">PB Crackers</div><div class="snack-detail">A pack of peanut butter crackers (Ritz or Lance) + a banana or some fruit. Easy to find at a gas station if you forgot to pack something.</div></div>
+        <div class="snack-card"><div class="snack-lbl">Combo #3 · More Filling</div><div class="snack-name">Granola Bar + Fruit</div><div class="snack-detail">A Chewy, Nature Valley, or RX Bar + an orange or some grapes. Good if there's a longer break coming and she needs something more substantial.</div></div>
+        <div class="snack-card"><div class="snack-lbl">Combo #4 · Refreshing</div><div class="snack-name">Watermelon + Yogurt Tube</div><div class="snack-detail">Watermelon chunks + a squeezable Greek yogurt tube. Great for warm gyms. High water content helps hydration. Easy to eat standing up.</div></div>
+        <div class="snack-card"><div class="snack-lbl">Combo #5 · Make Ahead</div><div class="snack-name">Energy Balls</div><div class="snack-detail">2 cups oats + ½ cup peanut butter + ⅓ cup honey + mini chocolate chips. Mix, chill 30 min, roll into balls, freeze. Grab 2–3 as a quick snack.</div></div>
+        <div class="snack-card"><div class="snack-lbl">Combo #6 · Emergency Backup</div><div class="snack-name">RX Bar + Coconut Water</div><div class="snack-detail">Keep 2–3 buried in the bag. Whole food ingredients. Pair with coconut water (natural electrolytes) if she's really dragging.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:32px;">What to Drink and When</div>
+      <div class="card">
+        <table class="tbl green">
+          <thead><tr><th>Drink</th><th>When</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Water</td><td>All day, constantly</td><td>The foundation. If urine is dark yellow, she's already behind.</td></tr>
+            <tr><td>Gatorade or Powerade</td><td>During and between matches</td><td>Replaces electrolytes. Dilute 50/50 with water if she drinks fast or cramps easily.</td></tr>
+            <tr><td>Liquid IV or LMNT packet</td><td>Both tournament mornings</td><td>Better electrolyte balance than Gatorade. Good addition if you have some.</td></tr>
+            <tr><td>Coconut water</td><td>Post-match recovery</td><td>Natural potassium, gentler than sports drinks. Good at end of a long match block.</td></tr>
+            <tr><td>Orange juice</td><td>With breakfast</td><td>Fast glucose + vitamin C. Good with the morning meal.</td></tr>
+            <tr><td>Avoid: soda, energy drinks</td><td>Especially tournament days</td><td>These work against hydration. Save them for after Sunday.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub-label" style="margin-top:32px;">Hydration Tips</div>
+      <div class="tip-grid">
+        <div class="tip"><div class="tip-icon">💧</div><div class="tip-title">The Sip Rule</div><div class="tip-body">Sipping consistently beats chugging. Chugging causes cramps and a sloshing stomach. One or two sips every few minutes beats drinking a full bottle at once.</div></div>
+        <div class="tip"><div class="tip-icon">🟡</div><div class="tip-title">Check the Color</div><div class="tip-body">Pale yellow = good. Dark yellow = drink more right now. Clear = over-hydrated (rare). The goal is pale yellow all day long.</div></div>
+        <div class="tip"><div class="tip-icon">🍉</div><div class="tip-title">Food Hydrates Too</div><div class="tip-body">Watermelon, oranges, grapes, and strawberries are mostly water. Packing fruit isn't just about carbs — it contributes to hydration.</div></div>
+        <div class="tip"><div class="tip-icon">🧂</div><div class="tip-title">Salt Matters</div><div class="tip-body">She's sweating out sodium. Plain water alone doesn't replace it. Sports drinks or electrolyte packets matter on tournament days — they have salt in them.</div></div>
+        <div class="tip"><div class="tip-icon">⏰</div><div class="tip-title">Start Early</div><div class="tip-body">It takes hours for hydration to catch up. Starting a water bottle on the car ride to the venue is much more effective than frantically drinking right before a match.</div></div>
+        <div class="tip"><div class="tip-icon">😴</div><div class="tip-title">Hydrate Before Bed</div><div class="tip-body">Drinking 8–12 oz of water before sleep on Saturday night helps start Day 2 better hydrated. The body keeps using water overnight.</div></div>
+      </div>
+    </div>
+
+  </div><!-- /page-container -->
+</div><!-- /page-energy -->
+
+
+<!-- ═══════════════════════════════════════════
+     HOTEL PAGE
+═══════════════════════════════════════════ -->
+<div id="page-hotel" class="page hotel-page">
+
+  <div class="page-header hotel">
+    <div class="ph-eyebrow hotel">COLAVOL 14 White · Regionals · Section 3 of 3</div>
+    <h2>AC Hotel<br><em>Buckhead</em></h2>
+    <div class="ph-sub">Your home base for Regionals weekend — everything you need about the hotel, getting there, athlete fuel nearby, and weekend logistics.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+      <span class="hero-badge hb-accent">Marriott Bonvoy</span>
+      <span class="hero-badge hb-white">3600 Wieuca Rd NE · Atlanta, GA 30326</span>
+      <span class="hero-badge" style="background:#0a1a0a;color:var(--green);border:1px solid #1a3a1a;">4-Star Property</span>
+    </div>
+    <button class="ph-back" onclick="showPage('home',document.querySelector('[data-page=home]'))">← Back to Hub</button>
+  </div>
+
+  <div class="subpage-nav hotel-page">
+    <div class="subpage-nav-inner">
+      <button class="sub-nav-btn active" onclick="showSubSection('hotel','h-overview',this)">Overview</button>
+      <button class="sub-nav-btn" onclick="showSubSection('hotel','h-directions',this)">Directions</button>
+      <button class="sub-nav-btn" onclick="showSubSection('hotel','h-amenities',this)">Amenities</button>
+      <button class="sub-nav-btn" onclick="showSubSection('hotel','h-food',this)">Food &amp; Fuel</button>
+      <button class="sub-nav-btn" onclick="showSubSection('hotel','h-supplies',this)">Supplies &amp; Gas</button>
+      <button class="sub-nav-btn" onclick="showSubSection('hotel','h-tips',this)">Weekend Tips</button>
+    </div>
+  </div>
+
+  <div class="page-container">
+
+    <!-- OVERVIEW -->
+    <div id="h-overview" class="sub-section active">
+      <div class="sec-hd">
+        <span class="sec-badge b-yellow">Hotel</span>
+        <div><div class="sec-title">AC Hotel Atlanta Buckhead</div><div class="sec-meta">at Phipps Plaza · 4-Star Marriott Property · Buckhead, Atlanta</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">~1:40</div><div class="stat-lbl">Drive from Columbus</div></div>
+        <div class="stat"><div class="stat-num">167</div><div class="stat-lbl">Total Rooms</div></div>
+        <div class="stat"><div class="stat-num">4★</div><div class="stat-lbl">Property Rating</div></div>
+        <div class="stat"><div class="stat-num">&lt;5mi</div><div class="stat-lbl">To Venue</div></div>
+      </div>
+      <div class="g2-3" style="gap:14px;margin-top:4px;">
+        <div class="card hl-yellow">
+          <div class="card-label">Contact Information</div>
+          <div class="info-row"><div class="info-icon">📍</div><div class="info-body"><div class="info-label">Address</div><div class="info-value">3600 Wieuca Rd NE, Atlanta, GA 30326</div></div></div>
+          <div class="info-row"><div class="info-icon">📞</div><div class="info-body"><div class="info-label">Front Desk</div><div class="info-value"><a href="tel:+14702313030">(470) 231-3030</a></div></div></div>
+          <div class="info-row"><div class="info-icon">🌐</div><div class="info-body"><div class="info-label">Marriott Page</div><div class="info-value"><a href="https://www.marriott.com/en-us/hotels/atlac-ac-hotel-atlanta-buckhead-at-phipps-plaza/overview/" target="_blank">marriott.com → ATLAC</a></div></div></div>
+          <div class="info-row"><div class="info-icon">⏰</div><div class="info-body"><div class="info-label">Front Desk Hours</div><div class="info-value">Open 24 hours / 7 days</div></div></div>
+          <div class="info-row"><div class="info-icon">📠</div><div class="info-body"><div class="info-label">Toll-Free (Marriott)</div><div class="info-value"><a href="tel:18882362427">+1 888-236-2427</a></div></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="card hl-green">
+            <div class="card-label">Location Snapshot</div>
+            <div style="font-size:13px;color:#aab3bf;line-height:1.7;">Attached to Phipps Plaza luxury mall.<br>Across from Lenox Square.<br>~0.9 mi walk to Lenox MARTA stop.<br>Buckhead — "Beverly Hills of the South."</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Marriott Bonvoy Points</div>
+            <div style="font-size:13px;color:#aab3bf;line-height:1.7;">Points-eligible property. Use your Bonvoy number at check-in for eligible nights and points.</div>
+          </div>
+        </div>
+      </div>
+      <div class="callout yellow" style="margin-top:20px;">
+        <strong>Why this hotel works for Regionals weekend:</strong> Directly adjacent to Phipps Plaza, putting you within a 5-minute drive of the venue. Phipps Plaza has restaurants, a food hall, and Life Time Athletic — extremely convenient for athlete meal prep and recovery. Lenox Square is directly across Peachtree for additional dining and shopping.
+      </div>
+      <div class="sub-label">What to Expect</div>
+      <div class="g3">
+        <div class="card"><div class="card-label">Rooms</div><div class="card-title blue" style="font-size:16px;">European-Inspired</div><div style="font-size:13px;color:#9aa3b0;line-height:1.6;">Glass-enclosed showers · Pull-out sofas in some rooms · <strong style="color:var(--accent);">Mini-fridge in all rooms</strong> · Coffee maker · Free high-speed Wi-Fi</div></div>
+        <div class="card"><div class="card-label">On-Site Dining</div><div class="card-title green" style="font-size:16px;">AC Kitchen</div><div style="font-size:13px;color:#9aa3b0;line-height:1.6;">Breakfast spot. Fresh croissants · Artisan meats · Egg tarts · Nespresso coffee. <strong style="color:var(--accent);">Opens early</strong> — ideal for tournament morning fuel.</div></div>
+        <div class="card"><div class="card-label">Bar &amp; Lounge</div><div class="card-title" style="font-size:16px;color:var(--purple);">AC Lounge</div><div style="font-size:13px;color:#9aa3b0;line-height:1.6;">Signature cocktails · Small plates · Great for team wind-down after Day 1. Open Sun–Sat 5am–2am.</div></div>
+      </div>
+    </div>
+
+    <!-- DIRECTIONS -->
+    <div id="h-directions" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-blue">Navigation</span>
+        <div><div class="sec-title">Getting There</div><div class="sec-meta">Drive times, Google Maps links, and parking info</div></div>
+      </div>
+      <div class="callout yellow">
+        <strong>Drive time from Columbus, GA:</strong> Approximately 1 hour 40 minutes via I-185 N → I-85 N. Give yourself buffer on Friday evening — Atlanta traffic on I-85 near the perimeter can add 20–30 minutes. Plan to arrive before 6pm if possible.
+      </div>
+      <div class="g2">
+        <div class="card hl-blue">
+          <div class="card-label">Route 1 · Hotel</div>
+          <div class="card-title blue">Columbus → AC Hotel Buckhead</div>
+          <div style="font-size:13px;color:#9aa3b0;margin-bottom:12px;line-height:1.6;">I-185 N to I-85 N. Exit Lenox Rd / Peachtree Rd. Approximately 100 miles / 1h 40min under normal conditions.</div>
+          <a class="map-btn blue" href="https://www.google.com/maps/dir/Columbus,+GA/3600+Wieuca+Rd+NE,+Atlanta,+GA+30326" target="_blank">🗺 Open in Google Maps</a>
+        </div>
+        <div class="card hl-green">
+          <div class="card-label">Route 2 · Venue</div>
+          <div class="card-title green">Hotel → Tournament Venue (GWCC)</div>
+          <div style="font-size:13px;color:#9aa3b0;margin-bottom:12px;line-height:1.6;">Drive from AC Hotel Buckhead to the GWCC. Confirm venue address on <a href="https://www.srva.org/regionals" target="_blank">srva.org/regionals</a> before the weekend.</div>
+          <a class="map-btn green" href="https://www.google.com/maps/dir/3600+Wieuca+Rd+NE,+Atlanta,+GA+30326/Georgia+World+Congress+Center+Atlanta+GA" target="_blank">🏐 Venue Directions</a>
+        </div>
+      </div>
+      <div class="sub-label">Driving Route Overview</div>
+      <div class="card">
+        <table class="poi-table">
+          <thead><tr><th>Segment</th><th>Road</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Columbus → I-185</td><td>Local streets → I-185 N</td><td>Hop on I-185 N from Columbus</td></tr>
+            <tr><td>I-185 → I-85</td><td>I-85 N (merge)</td><td>Watch for I-185 ending, merge onto I-85 N toward Atlanta</td></tr>
+            <tr><td>I-85 N → Atlanta perimeter</td><td>I-85 N</td><td>⚠️ Heavy traffic zone Friday PM — expect delays near I-285</td></tr>
+            <tr><td>Atlanta → Buckhead</td><td>I-85 N → Exit 86 (Lenox Rd)</td><td>Exit 86 for Lenox Rd / Peachtree Rd. Head north on Peachtree.</td></tr>
+            <tr><td>Final approach</td><td>Peachtree Rd → Wieuca Rd</td><td>Right on Wieuca Rd. Hotel entrance on right, attached to Phipps Plaza.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AMENITIES -->
+    <div id="h-amenities" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-purple">Property</span>
+        <div><div class="sec-title">Hotel Amenities</div><div class="sec-meta">What's on-site and what you can walk to from the hotel</div></div>
+      </div>
+      <div class="sub-label">On-Property Amenities</div>
+      <div class="chip-row" style="margin-bottom:20px;">
+        <span class="chip green">🏊 Heated Indoor Pool</span>
+        <span class="chip green">💪 Fitness Center</span>
+        <span class="chip blue">🍳 AC Kitchen (Breakfast)</span>
+        <span class="chip blue">🍸 AC Lounge (Bar)</span>
+        <span class="chip yellow">📶 Free Wi-Fi</span>
+        <span class="chip yellow">❄️ Fridge In Every Room</span>
+        <span class="chip">☕ In-Room Coffee Maker</span>
+        <span class="chip">🌿 Garden / Terrace</span>
+        <span class="chip">📚 Library Lounge</span>
+        <span class="chip">🧺 Dry Cleaning / Laundry</span>
+        <span class="chip">🚗 On-Site Parking</span>
+      </div>
+      <div class="callout green">
+        <strong>Recovery-Friendly Setup:</strong> The heated indoor pool is a genuine asset — a 10-minute soak after Day 1 does wonders for sore legs. Grab the mini fridge — stock it with tournament snacks and overnight oats on arrival.
+      </div>
+      <div class="sub-label">Phipps Plaza (Connected to Hotel)</div>
+      <div class="g2">
+        <div class="card hl-blue">
+          <div class="card-label">Phipps Food Hall</div>
+          <div class="card-title blue" style="font-size:16px;">25,000 sq ft Culinary Destination</div>
+          <div style="font-size:13px;color:#9aa3b0;line-height:1.6;margin-bottom:10px;">
+            <strong style="color:var(--green);">Lokma Mediterranean Kitchen</strong> — grilled proteins, rice, wraps (great athlete fuel)<br>
+            <strong style="color:var(--white);">Wasabi Sushi &amp; Ramen</strong> — rice-forward, solid carb-loading option<br>
+            <strong style="color:var(--white);">Pizza Jeans</strong> — familiar, energy-dense option
+          </div>
+          <span class="chip green">🏃 Walk-in access from hotel lobby</span>
+        </div>
+        <div class="card">
+          <div class="card-label">Life Time Athletic — Phipps</div>
+          <div class="card-title" style="font-size:16px;color:var(--purple);">Premium Health Club</div>
+          <div style="font-size:13px;color:#9aa3b0;line-height:1.6;margin-bottom:10px;">Located inside Phipps Plaza. Full athletic facility with gym, pool, and an on-site café serving smoothies and healthy meals. Day passes available.</div>
+          <span class="chip">Day pass pricing varies — call ahead</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD & FUEL -->
+    <div id="h-food" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-green">Nutrition</span>
+        <div><div class="sec-title">Food &amp; Athlete Fuel</div><div class="sec-meta">Restaurants within 1 mile — sorted by athlete-friendliness</div></div>
+      </div>
+      <div class="callout green">
+        <strong>Energy Meal Priority:</strong> Look for <strong style="color:var(--white);">carb-forward + lean protein</strong>. Best bets: rice bowls, pasta, grilled chicken wraps, Mediterranean plates. Avoid heavy fried foods and excessive dairy before competition.
+      </div>
+      <div class="sub-label">🏆 Top Picks for Athletes</div>
+      <div class="rest-grid">
+        <div class="rest-card athlete">
+          <div class="rest-top"><div><div class="rest-name">True Food Kitchen</div><div class="rest-dist">~0.4 mi · Lenox Square · 5 min walk</div></div><span class="rest-tag tag-green">Best Pick</span></div>
+          <div class="rest-body">Health-forward menu built around whole, real ingredients. Grilled proteins, grain bowls, anti-inflammatory options. Ideal for pre-tournament dinner Friday night.</div>
+          <div class="rest-notes">✅ Lean proteins, complex carbs, vegetables · No junk fillers</div>
+        </div>
+        <div class="rest-card athlete">
+          <div class="rest-top"><div><div class="rest-name">Lokma Mediterranean Kitchen</div><div class="rest-dist">In Phipps · Connected to hotel</div></div><span class="rest-tag tag-green">Top Fuel</span></div>
+          <div class="rest-body">Mediterranean fast-casual in the Phipps Food Hall. Grilled proteins, rice, wraps, salads. Exactly the carb + protein + veggie combo that works pre-match or for Friday dinner.</div>
+          <div class="rest-notes">✅ Best convenience option — steps from the hotel lobby · No drive needed</div>
+        </div>
+        <div class="rest-card fuel">
+          <div class="rest-top"><div><div class="rest-name">Wasabi Sushi &amp; Ramen</div><div class="rest-dist">In Phipps Food Hall · Connected</div></div><span class="rest-tag tag-yellow">Carb Load</span></div>
+          <div class="rest-body">Rice-forward sushi bowls and ramen. Good carb-loading option for Friday dinner. Teriyaki bowls hit the rice + protein target well.</div>
+          <div class="rest-notes">⚡ Rice bowls and ramen are great for Saturday morning fuel</div>
+        </div>
+        <div class="rest-card close">
+          <div class="rest-top"><div><div class="rest-name">Seven Lamps</div><div class="rest-dist">~0.6 mi · Around Lenox Rd</div></div><span class="rest-tag tag-blue">Team Dinner</span></div>
+          <div class="rest-body">Upscale American. Good for a team dinner Friday night. Menu includes grilled proteins, pasta, and solid carb options.</div>
+          <div class="rest-notes">🍝 Order pasta or grilled chicken — skip heavy cream sauces night before competition</div>
+        </div>
+        <div class="rest-card close">
+          <div class="rest-top"><div><div class="rest-name">South City Kitchen</div><div class="rest-dist">~0.5 mi · Buckhead</div></div><span class="rest-tag tag-blue">Solid Option</span></div>
+          <div class="rest-body">Upscale Southern comfort food. Good proteins — grilled fish, chicken. Be strategic: roasted chicken + grits + vegetable sides work well.</div>
+          <div class="rest-notes">⚠️ Choose wisely — grilled over fried, light sides</div>
+        </div>
+        <div class="rest-card fuel">
+          <div class="rest-top"><div><div class="rest-name">AC Kitchen (Hotel)</div><div class="rest-dist">On-site · Hotel lobby level</div></div><span class="rest-tag tag-yellow">Morning Fuel</span></div>
+          <div class="rest-body">Hotel breakfast restaurant. Fresh croissants, artisan cured meats, egg tarts, Nespresso. Opens early — key for tournament morning.</div>
+          <div class="rest-notes">⏰ Most convenient for early departure days — grab and go</div>
+        </div>
+      </div>
+      <div class="sub-label">Best Friday Night Dinner Plan</div>
+      <div class="callout green">
+        <strong>Best Friday Dinner Play:</strong> Walk to <strong>True Food Kitchen</strong> (Lenox Square, 5-min walk). Grilled salmon or chicken + a grain bowl + vegetables. Back at the hotel by 8pm, in bed by 10. If the team wants something faster, the <strong>Phipps Food Hall</strong> (Lokma or Wasabi) is a zero-effort option from the hotel elevator.
+      </div>
+    </div>
+
+    <!-- SUPPLIES & GAS -->
+    <div id="h-supplies" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-orange">Logistics</span>
+        <div><div class="sec-title">Supplies, Gas &amp; Essentials</div><div class="sec-meta">Pharmacies, gas stations, and grocery options within 1–2 miles</div></div>
+      </div>
+      <div class="callout orange">
+        <strong>Stock the fridge on arrival Friday:</strong> Hit a pharmacy or grocery store on the way in and grab bananas, peanut butter, granola bars, electrolyte packets, and water. The mini-fridge is a real asset — use it.
+      </div>
+      <div class="sub-label">Pharmacies &amp; Snack Runs</div>
+      <div class="card">
+        <table class="poi-table">
+          <thead><tr><th>Store</th><th>Address</th><th>Distance</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>CVS Pharmacy <span class="tag" style="background:#0a1a0a;color:var(--green);">CLOSEST</span></td><td>3221 Peachtree Rd NE</td><td>~0.4 mi</td><td>Open until midnight. Snacks, water, electrolyte packets, first aid, tape, ibuprofen.</td></tr>
+            <tr><td>CVS Pharmacy</td><td>1943 Peachtree Rd NE</td><td>~1.5 mi</td><td>Full pharmacy. UPS pickup. Grocery pickup via Kroger partnership.</td></tr>
+            <tr><td>Walgreens</td><td>Multiple Buckhead locations</td><td>~0.5–1 mi</td><td>24-hr locations available. Same snack/supply inventory as CVS.</td></tr>
+            <tr><td>Whole Foods Market</td><td>Buckhead (near Lenox)</td><td>~0.6 mi</td><td>Best for quality athlete snacks — nut butters, fresh fruit, quality protein bars, electrolyte drinks.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub-label">Gas Stations</div>
+      <div class="card">
+        <table class="poi-table">
+          <thead><tr><th>Station</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>UPop (ARCO) — Buckhead <span class="tag" style="background:#1a1008;color:var(--orange);">Cheapest</span></td><td>Georgia's first ARCO station. Known for lowest prices in Buckhead. Full convenience store. Check Google Maps for exact location near Phipps area.</td></tr>
+            <tr><td>Multiple on Peachtree Rd</td><td>BP, Shell, and Chevron locations on Peachtree Rd corridor. Buckhead gas is premium-priced generally.</td></tr>
+            <tr><td>Pro tip: Fill up before Buckhead</td><td>Gas near Buckhead runs $0.20–0.40 more per gallon than suburban Atlanta. I-285 / I-85 interchange area has competitive pricing — easy to stop en route.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sub-label">Tournament Snack Pack — Grab at CVS/Walgreens</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-label">Pack These Friday Night</div>
+          <ul class="bl green">
+            <li>Bananas (grab a full bunch)</li>
+            <li>Peanut butter (individual packets or small jar)</li>
+            <li>Granola bars (Chewy, Nature Valley, or RX Bar)</li>
+            <li>String cheese or beef jerky</li>
+            <li>Gatorade / Powerade or Liquid IV packets</li>
+            <li>Water bottles (large — one per day minimum)</li>
+            <li>Ibuprofen or Tylenol (just in case)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-label">Use the Hotel Fridge</div>
+          <div style="font-size:13px;color:#aab3bf;line-height:1.8;">
+            Every room has a mini-fridge. <strong style="color:var(--accent);">Pack it Friday night.</strong><br><br>
+            Overnight oats → fridge by 10pm Saturday → ready by 6am Sunday.<br><br>
+            Keep electrolyte drinks cold overnight.<br><br>
+            Leftover rotisserie chicken from Whole Foods makes a zero-effort tournament lunch the next day.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKEND TIPS -->
+    <div id="h-tips" class="sub-section">
+      <div class="sec-hd">
+        <span class="sec-badge b-yellow">Pro Tips</span>
+        <div><div class="sec-title">Weekend Logistics Tips</div><div class="sec-meta">How to make the Buckhead hotel base work for a 2-day tournament</div></div>
+      </div>
+      <div class="tip-grid">
+        <div class="tip"><div class="tip-icon">🛎️</div><div class="tip-title">Check In Early</div><div class="tip-body">Call (470-231-3030) and request early check-in for Friday. Arriving mid-afternoon means you can settle in, hit CVS for supplies, and have a calm dinner before early bedtime.</div></div>
+        <div class="tip"><div class="tip-icon">🧊</div><div class="tip-title">Load the Fridge</div><div class="tip-body">Room fridges are your best tool. Hit Whole Foods or CVS on Friday and stock it: bananas, PB, string cheese, overnight oat ingredients, Gatorade. You won't need to hunt for breakfast at 5:30am.</div></div>
+        <div class="tip"><div class="tip-icon">🏊</div><div class="tip-title">Pool for Recovery</div><div class="tip-body">The heated indoor pool is a legitimate recovery tool. After Day 1 (Saturday), a 10–15 minute soak helps with leg fatigue. Get in around 7pm, out by 8pm, light snack, bed by 10.</div></div>
+        <div class="tip"><div class="tip-icon">🍝</div><div class="tip-title">Friday Night Dinner</div><div class="tip-body">Don't skip dinner or eat junk Friday. Best move: True Food Kitchen (5-min walk) or Lokma at the Food Hall (inside the hotel complex). Carbs + protein. Eat by 7:30pm.</div></div>
+        <div class="tip"><div class="tip-icon">⛽</div><div class="tip-title">Gas Up Before Buckhead</div><div class="tip-body">Fill your tank at an I-85 exit or I-285 before reaching Buckhead. Gas in this area runs premium. One less thing to deal with on tournament morning when you're in a hurry.</div></div>
+        <div class="tip"><div class="tip-icon">📍</div><div class="tip-title">Pre-Save the Venue</div><div class="tip-body">Before leaving Columbus, screenshot the exact venue address from srva.org/regionals and drop a Google Maps pin. Tournament morning is not the time to troubleshoot directions.</div></div>
+        <div class="tip"><div class="tip-icon">🎬</div><div class="tip-title">Friday Wind-Down</div><div class="tip-body">AMC Phipps Plaza 14 is inside Phipps (connected to the hotel). Good option for a low-energy Friday night decompression. Early show, back by 9–10pm.</div></div>
+        <div class="tip"><div class="tip-icon">🧳</div><div class="tip-title">Forgotten Gear? Lenox</div><div class="tip-body">Lenox Square is directly across Peachtree Rd (~0.5 mi). If anyone forgets knee pads, athletic wear, or training shoes — Lenox has athletic retailers and department stores.</div></div>
+        <div class="tip"><div class="tip-icon">🚗</div><div class="tip-title">Rideshare Is Easy Here</div><div class="tip-body">Buckhead is one of Atlanta's best rideshare zones. If venue parking is a concern, Uber/Lyft from the hotel to venue and back is a clean option. Keep the cars at Phipps.</div></div>
+      </div>
+      <div class="sub-label">Weekend Schedule Summary</div>
+      <div class="card hl-yellow">
+        <table class="poi-table">
+          <thead><tr><th>Time</th><th>Suggested Action</th><th>Location</th></tr></thead>
+          <tbody>
+            <tr><td>Friday Afternoon</td><td>Check in · Stock fridge from CVS/Whole Foods · Fill gas on way in</td><td>Hotel / Nearby</td></tr>
+            <tr><td>Friday Evening</td><td>Early dinner (True Food Kitchen or Lokma Food Hall) · Relaxed activity or pool · Prep overnight oats for Sunday · Bed by 10pm</td><td>Lenox / Phipps</td></tr>
+            <tr><td>Saturday 6–7am</td><td>AC Kitchen breakfast or room-prepped meal · Hydrate · Depart by [check-in time minus 30min]</td><td>Hotel</td></tr>
+            <tr><td>Saturday Evening</td><td>Return to hotel · Pool recovery soak · Light dinner · Prep Day 2 snacks · Bed by 10pm</td><td>Hotel / Phipps</td></tr>
+            <tr><td>Sunday 6–7am</td><td>Overnight oats or AC Kitchen · Grab pre-packed snack bag · Depart</td><td>Hotel</td></tr>
+            <tr><td>Sunday Post-Tournament</td><td>Celebrate 🏐 · Lenox or Phipps for a meal · Drive home or stay another night</td><td>Buckhead</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /page-container -->
+</div><!-- /page-hotel -->
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  COLAVOL 14 White · Regionals May 2–3 · GWCC Atlanta ·
+  Hotel: AC Hotel Buckhead at Phipps Plaza ·
+  <a href="https://www.srva.org/regionals" target="_blank">srva.org/regionals ↗</a>
+</footer>
+
+
+<script>
+// ── Page-level navigation ──
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.site-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Sub-section navigation ──
+function showSubSection(pageId, sectionId, btn) {
+  const page = document.getElementById('page-' + pageId);
+  page.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
+  page.querySelectorAll('.sub-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+  if (btn) btn.classList.add('active');
+  const navTop = page.querySelector('.subpage-nav').getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({ top: navTop - 46, behavior: 'smooth' });
+}
+
+// ── Accordion ──
+function acc(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  btn.closest('.acc').querySelectorAll('.acc-btn').forEach(b => b.classList.remove('open'));
+  btn.closest('.acc').querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
+  if (!isOpen) { btn.classList.add('open'); body.classList.add('open'); }
+}
+
+// ── Direction tabs ──
+function dirTab(id, btn) {
+  const card = btn.closest('.card');
+  card.querySelectorAll('.dir-tab').forEach(t => t.classList.remove('active'));
+  card.querySelectorAll('.dir-content').forEach(c => c.classList.remove('active'));
+  card.querySelector('#' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
